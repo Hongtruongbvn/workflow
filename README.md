@@ -1,58 +1,158 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# WorkFlow Pro
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**WorkFlow Pro** is a project and task management application built with Laravel. It helps teams manage workspaces, projects, tasks, deadlines, members, and project progress in one place.
 
-## About Laravel
+## Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+* User authentication
+* Workspace management
+* Member management and roles
+* Project management
+* Task management
+* Kanban Board
+* Task assignment and deadlines
+* Milestones
+* Comments and file attachments
+* Notifications
+* Project progress tracking and reports
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Tech Stack
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+* Laravel
+* PHP
+* SQLite
+* Blade
+* Laravel Authentication
 
-## Learning Laravel
+## Requirements
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+* PHP
+* Composer
+* Node.js & npm
+* SQLite
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Installation
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
-
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+Clone the repository:
 
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+git clone YOUR_REPOSITORY_URL
+cd YOUR_PROJECT_FOLDER
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+Install dependencies:
 
-## Contributing
+```bash
+composer install
+npm install
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Create the environment file:
 
-## Code of Conduct
+```bash
+cp .env.example .env
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Generate the application key:
 
-## Security Vulnerabilities
+```bash
+php artisan key:generate
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Run migrations:
+
+```bash
+php artisan migrate
+```
+
+Start the development server:
+
+```bash
+php artisan serve
+```
+
+For frontend assets:
+
+```bash
+npm run dev
+```
+
+The application will be available at:
+
+```text
+http://localhost:8000
+```
+
+## Environment Configuration
+
+Create a `.env` file based on `.env.example`.
+
+```env
+APP_NAME=YOUR_APP_NAME
+APP_ENV=YOUR_APP_ENV
+APP_KEY=YOUR_APP_KEY
+APP_DEBUG=YOUR_APP_DEBUG
+APP_URL=YOUR_APP_URL
+
+APP_LOCALE=YOUR_APP_LOCALE
+APP_FALLBACK_LOCALE=YOUR_APP_FALLBACK_LOCALE
+APP_FAKER_LOCALE=YOUR_APP_FAKER_LOCALE
+
+APP_MAINTENANCE_DRIVER=YOUR_APP_MAINTENANCE_DRIVER
+
+BCRYPT_ROUNDS=YOUR_BCRYPT_ROUNDS
+
+LOG_CHANNEL=YOUR_LOG_CHANNEL
+LOG_STACK=YOUR_LOG_STACK
+LOG_DEPRECATIONS_CHANNEL=YOUR_LOG_DEPRECATIONS_CHANNEL
+LOG_LEVEL=YOUR_LOG_LEVEL
+
+DB_CONNECTION=YOUR_DB_CONNECTION
+DB_HOST=YOUR_DB_HOST
+DB_PORT=YOUR_DB_PORT
+DB_DATABASE=YOUR_DB_DATABASE
+DB_USERNAME=YOUR_DB_USERNAME
+DB_PASSWORD=YOUR_DB_PASSWORD
+
+SESSION_DRIVER=YOUR_SESSION_DRIVER
+SESSION_LIFETIME=YOUR_SESSION_LIFETIME
+SESSION_ENCRYPT=YOUR_SESSION_ENCRYPT
+SESSION_PATH=YOUR_SESSION_PATH
+SESSION_DOMAIN=YOUR_SESSION_DOMAIN
+
+BROADCAST_CONNECTION=YOUR_BROADCAST_CONNECTION
+FILESYSTEM_DISK=YOUR_FILESYSTEM_DISK
+QUEUE_CONNECTION=YOUR_QUEUE_CONNECTION
+
+CACHE_STORE=YOUR_CACHE_STORE
+
+MEMCACHED_HOST=YOUR_MEMCACHED_HOST
+
+REDIS_CLIENT=YOUR_REDIS_CLIENT
+REDIS_HOST=YOUR_REDIS_HOST
+REDIS_PASSWORD=YOUR_REDIS_PASSWORD
+REDIS_PORT=YOUR_REDIS_PORT
+
+MAIL_MAILER=YOUR_MAIL_MAILER
+MAIL_SCHEME=YOUR_MAIL_SCHEME
+MAIL_HOST=YOUR_MAIL_HOST
+MAIL_PORT=YOUR_MAIL_PORT
+MAIL_USERNAME=YOUR_MAIL_USERNAME
+MAIL_PASSWORD=YOUR_MAIL_PASSWORD
+MAIL_FROM_ADDRESS=YOUR_MAIL_FROM_ADDRESS
+MAIL_FROM_NAME=YOUR_MAIL_FROM_NAME
+
+AWS_ACCESS_KEY_ID=YOUR_AWS_ACCESS_KEY_ID
+AWS_SECRET_ACCESS_KEY=YOUR_AWS_SECRET_ACCESS_KEY
+AWS_DEFAULT_REGION=YOUR_AWS_DEFAULT_REGION
+AWS_BUCKET=YOUR_AWS_BUCKET
+AWS_USE_PATH_STYLE_ENDPOINT=YOUR_AWS_USE_PATH_STYLE_ENDPOINT
+
+VITE_APP_NAME=YOUR_VITE_APP_NAME
+```
+
+> **Note:** Never commit your `.env` file or sensitive credentials to the repository. Use `.env.example` for sharing environment configuration.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is for personal portfolio and learning purposes.
