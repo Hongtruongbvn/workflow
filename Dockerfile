@@ -2,9 +2,9 @@
 FROM composer:2 AS vendor
 WORKDIR /app
 COPY composer.json composer.lock ./
-RUN composer install --no-dev --no-scripts --no-autoloader --prefer-dist --no-interaction --ignore-platform-reqs
+RUN composer install --no-dev --no-scripts --no-autoloader --prefer-dist --no-interaction --ignore-platform-req=ext-*
 COPY . .
-RUN composer dump-autoload --optimize --no-dev --no-scripts --ignore-platform-reqs
+RUN composer dump-autoload --optimize --no-dev --no-scripts --ignore-platform-req=ext-*
 
 # ---------- Stage 2: build CSS/JS bằng Vite ----------
 FROM node:22 AS assets
@@ -14,8 +14,8 @@ RUN if [ -f package-lock.json ]; then npm ci; else npm install; fi
 COPY . .
 RUN npm run build
 
-# ---------- Stage 3: image chạy thật ----------
-FROM php:8.3-apache
+# ---------- Stage 3: image chạy thật (PHP 8.4) ----------
+FROM php:8.4-apache
 
 RUN apt-get update && apt-get install -y \
     libzip-dev libpq-dev unzip \
